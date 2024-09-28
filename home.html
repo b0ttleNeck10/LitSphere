@@ -49,8 +49,10 @@
                             <input type="text" id="search_bar" placeholder="Search books">
                         </div>
                         <div class="cat_container">
-                            <p>Category</p>
-                            <button class="dropBtn"><i class="fa-solid fa-chevron-down"></i></button>
+                            <button class="dropBtn">
+                                <p>Category</p>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="categories">
@@ -77,6 +79,22 @@
                     </div>        
                 </footer>  
             </div>            
-        </div>     
+        </div>
+        <script>
+            const dropdownBtn = document.querySelector('.dropBtn');
+            const categories = document.querySelector('.categories');
+
+            dropdownBtn.addEventListener('click', function() {
+                const isVisible = categories.style.visibility === 'visible';
+                categories.style.visibility = isVisible ? 'hidden' : 'visible';
+            });
+            
+            window.addEventListener('click', function(event) {
+                const target = event.target;
+                if (!dropdownBtn.contains(target)) {
+                    categories.style.visibility = 'hidden';
+                }
+            });
+        </script>  
     </body>
 </html>
