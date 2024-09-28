@@ -162,6 +162,7 @@ input::placeholder {
     padding: 10px;
     background-color: #AEDDFF;
     left: 657px;
+    visibility: hidden;
 }
 
 .categories a {
@@ -179,5 +180,15 @@ input::placeholder {
 .categories p {
     font-family: 'Poppins';
     margin: 0;
+}
+
+.dropBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropBtn p {
+    font-size: 1rem;
 }
 
