@@ -5,8 +5,9 @@ body {
 }
 
 .background {
-    background-color: rgba(0, 0, 0, 0.3);
-    filter: blur(6px);
+    background-color: rgba(227,242,253,0.3);
+    filter: blur(3px);
+    margin: 0;
 }
 
 .parent {
@@ -127,6 +128,7 @@ form {
     font-size: 1rem;
     padding: 2rem 3rem 2rem 3rem;
     height: 550px;
+    flex-grow: 1;
 }
 
 form h2 {
@@ -151,8 +153,8 @@ form input {
 .fa-xmark {
     position: absolute;
     cursor: pointer;
-    left: 745px;
-    top: 23px;
+    left: 750px;
+    top: 18px;
 }
 
 button {
@@ -169,6 +171,7 @@ button {
 }
 
 #bookimg img{
+    flex-grow: 1;
     height: 100%;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;

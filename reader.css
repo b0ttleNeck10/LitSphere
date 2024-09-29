@@ -199,14 +199,16 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    align-items: stretch;
     margin-top: 2rem;
+    /* border: 1px solid black; */
 }
 
 .book_container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 9px;
+    gap: 8px;
     /* border: 1px solid black; */
 }
 
@@ -236,5 +238,105 @@ input::placeholder {
 .book img {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+/* Book Page */
+
+.current_page {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-top: 2.5rem;
+}
+
+.current_page h3 {
+    font-family: 'Poppins';
+    font-size: 2.3rem;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.req_book {
+    display: flex;
+    flex-direction: column;
+}
+
+.req_book img {
+    border-radius: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.req_book button {
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    height: 60px;
+    width: 259px;
+    background-image: linear-gradient(to right, #17A4C0, #053B9F);
+}
+
+.book_deets {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    line-height: 28px;
+}
+
+.book_deets .header {
+    font-family: 'Poppins';
+    margin: 0;
+    font-size: 1rem;
+}
+
+.book_deets p {
+    font-family: 'Poppins';
+    margin: 0;
+    text-align: justify;
+}
+
+/* Background blur */
+
+.background {
+    background-color: rgba(227,242,253,0.3);
+    filter: blur(3px);
+    margin: 0;
+}
+
+/* Request Book */
+
+.req_wrapper {
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    background-color: #e3f2fd;
+    border-radius: 30px;
+    height: 500px;
+    width: 500px;
+    box-shadow: 5px 5px 20px;
+    font-family: 'Poppins';
+    font-size: 2rem;
+}
+
+.req_container label {
+    display: block;
+    font-size: 1rem;
+}
+
+.req_container select {
+    border: none;
+    font-size: .8rem;
+    padding: 5px;
+}
+
+option[value=""][disabled] {
+    display: none;
 }
 
