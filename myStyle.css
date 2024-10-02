@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     margin: auto;
     width: 1200px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #logo {
