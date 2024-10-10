@@ -51,7 +51,7 @@
                         <div class="book_wrapper">
                             <div class="req_book">
                                 <img src="book_img/image2.svg" alt="">      
-                                <button>Request Book</button> 
+                                <button><a href="bookreq.html">Request Book</a></button> 
                             </div>       
                             <div class="book_deets">
                                 <h6 class="header">Title</h6>
@@ -81,10 +81,16 @@
             </div>
         </div>
         <div class="req_wrapper">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="verif_container">
+                <h4>Request Sent!</h4>
+                <img src="verif_icon/success.svg" alt="Successful">
+                <p>Your book request was sent successfully!</p>
+            </div>
             <div class="req_container">
                 <h4>Request Book</h4>
                 <form action="">
-                    <label for="day">Return Date:</label>
+                    <label for="day">Return Date:</label><br>
                     <select name="day" id="day_selection" required>
                         <option value="" disabled selected>Day</option>
                         <option value="1">1</option>
@@ -94,9 +100,52 @@
                         <option value="5">5</option>
                         <option value="6">6</option>
                         <option value="7">7</option>
-                    </select>
+                    </select><br>
+                    <label for="purpose">Purpose:</label><br>
+                    <input type="checkbox" class="choice" name="referencing" value=0>
+                    <label for="referencing">Referencing</label><br>
+                    <input type="checkbox" class="choice" name="in_house" value=0>
+                    <label for="in_house">In House Reading</label><br>
+                    <button id="submit_req" type="submit">Request Book</button>
                 </form>
             </div>
-        </div>     
+        </div>
+        <script>
+            const closeButton = document.querySelector('.fa-xmark');
+
+            closeButton.addEventListener('click', function() {
+                document.querySelector('.req_wrapper').style.display = 'none';
+                document.querySelector('.background').style.filter = 'none';
+                document.querySelector('.background').style.backgroundColor = 'none';
+                document.querySelector('body').style.overflow = 'visible';
+            });
+
+            const reqButton = document.getElementById('submit_req');
+
+            reqButton.addEventListener('click', function(event) {
+                event.preventDefault();  // Prevent default form submission
+                
+                const form = document.querySelector('form');
+                const daySelected = document.getElementById('day_selection').value;
+                const checkboxes = document.querySelectorAll('.choice');
+                let isChecked = false;
+                
+                // Check if any checkbox is selected
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        isChecked = true;
+                    }
+                });
+
+                if (daySelected && isChecked) {
+                    // Hide the form and show the verification message
+                    document.querySelector('.req_container').style.visibility = 'hidden';
+                    document.querySelector('.verif_container').style.visibility = 'visible';
+                } else {
+                    // Show an alert if form is not filled
+                    alert('Please select a return day and purpose.');
+                }
+            });
+        </script>     
     </body>
 </html>

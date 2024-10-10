@@ -16,7 +16,8 @@ body {
 
 .nav_container {
     width: 250px;
-    border-right: 1px solid #8fa3c9;
+    border-right: 1px solid;
+    border-right-color: #5185e641;
     position: relative;
     top: 0;
     bottom: 0;
@@ -68,11 +69,21 @@ ul li {
     height: 100vh;
 }
 
+.content_wrapper a {
+    text-decoration: none;
+    color:white;
+}
+
 .content_container {
     padding-left: 2rem;
     padding-right: 2rem;
     height: 100vh;
     position: relative;
+}
+
+hr {
+    border-top: 1px solid;
+    border-top-color: #5185e671;
 }
 
 footer {
@@ -232,7 +243,6 @@ input::placeholder {
     color: white;
     padding-top: 3px;
     padding-bottom: 8px;
-    height: 100%;
 }
 
 .book img {
@@ -269,7 +279,7 @@ input::placeholder {
 
 .req_book button {
     font-family: 'Poppins';
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: white;
     border: none;
     border-radius: 16px;
@@ -325,14 +335,50 @@ input::placeholder {
     font-size: 2rem;
 }
 
-.req_container label {
-    display: block;
+.verif_container {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.verif_container img {
+    margin-bottom: 2.5rem;
+}
+
+.verif_container p {
+    margin: 0;
     font-size: 1rem;
 }
 
+.req_container {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+
+}
+
+.req_container h4 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.req_container label {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
 .req_container select {
     border: none;
-    font-size: .8rem;
+    font-size: 1.1rem;
     padding: 5px;
 }
 
@@ -340,3 +386,40 @@ option[value=""][disabled] {
     display: none;
 }
 
+form {
+    font-family: 'Poppins';
+    font-weight: lighter;
+    line-height: 100%;
+}
+
+form br {
+    display: block;
+    line-height: 10px;
+}
+
+form button {
+    display: block;
+    font-size: 1.3rem;
+    border: none;
+    color: white;
+    background-image: linear-gradient(to right, #17A4C0, #053B9F);
+    border-radius: 15px;
+    padding: 10px 30px 10px 30px;
+    margin-top: 1.5rem !important;
+    margin: auto;
+}
+
+.choice {
+    border: none;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+}
+
+.fa-xmark {
+    position: absolute;
+    cursor: pointer;
+    left: 466px;
+    top: 20px;
+    font-size: 20px;
+}
